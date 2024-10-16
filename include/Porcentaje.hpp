@@ -24,8 +24,15 @@ public:
     ~Porcentaje() {}
     void Incrementar(int numero)
     {
+        this->numero += numero;
     }
     void Disminuir(int numero)
     {
+        this->numero -= numero;
+    }
+
+    int Imprimir()
+    {
+        return this->numero;
     }
 };
