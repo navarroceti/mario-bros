@@ -1,17 +1,20 @@
 #include <stdexcept>
 
-class Porcentaje
+class Foco
 {
 private:
     int numero;
+    bool encendido;
 
 public:
-    Porcentaje()
+    Foco()
     {
         this->numero = 0;
+        this->encendido = false;
     }
-    Porcentaje(int numero)
+    Foco(int numero)
     {
+        this->encendido = false;
         if (numero > 100 || numero < 0)
         {
             throw new std::runtime_error("Numero fuera de rango.");
@@ -21,7 +24,7 @@ public:
             this->numero = numero;
         }
     }
-    ~Porcentaje() {}
+    ~Foco() {}
     void Incrementar(int numero)
     {
         this->numero += numero;
@@ -30,9 +33,23 @@ public:
     {
         this->numero -= numero;
     }
-
-    int Imprimir()
+    void Encender()
     {
-        return this->numero;
+        this->encendido = true;
+    }
+    void Apagar()
+    {
+        this->encendido = false;
+    }
+
+    char Imprimir()
+    {
+        if (this->encendido)
+        {
+            return '*' ;
+        }else
+        {
+            return 'o';
+        }
     }
 };
