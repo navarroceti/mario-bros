@@ -1,7 +1,6 @@
 #include <iostream>
 #include <Foco.hpp>
 #include <list>
-using namespace std;
 
 class SerieNavidad
 {
@@ -28,6 +27,7 @@ public:
 
     void Imprimir()
     {
+        system("color 84");
         for (auto &&focoActual : focos)
         {
             std::cout
